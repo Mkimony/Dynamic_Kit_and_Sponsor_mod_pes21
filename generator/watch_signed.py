@@ -14,10 +14,11 @@ For every request it has not seen before it regenerates that club's
 home/away/third kits with the signed sponsor (new design + sponsor logo) and
 installs them into
 
-    <game>\SiderAddons\livecpk\KitGenerator\Asset\...\#windx11\u<team>p<slot>.ftex
+    <sider>\content\kits\_KitGenerator\u<team>p<slot>.ftex
 
-so the new kits show at the next match.  Processed offer ids are remembered in
-watcher_state.txt, so a request is only ever built once.
+which KitGenerator.lua serves to Sider (only while a Master League career is
+loaded), so the new kits show at the next match.  Processed offer ids are
+remembered in watcher_state.txt, so a request is only ever built once.
 
 Only one watcher may run at a time: it holds a loopback TCP port and a second
 copy exits immediately.
@@ -43,9 +44,9 @@ DEFAULT_GAME_ROOT = Path(r"C:\Program Files (x86)\SP Football Life 2027")
 LOCK_PORT = 51517
 POLL_SECONDS = 2.0
 
-# region the .ftex overrides are installed into, relative to the game root
-INSTALL_SUBDIR = Path("SiderAddons/livecpk/KitGenerator/Asset/model/character/"
-                      "uniform/texture/#windx11")
+# private store the generated .ftex set is installed into, relative to the sider
+# folder (served to the game only in Master League, via the livecpk hooks)
+INSTALL_SUBDIR = Path("content/kits/_KitGenerator")
 
 
 # --------------------------------------------------------------------------- #
@@ -164,7 +165,7 @@ def rebuild(club_id, season, brand, sider, game_root, logfile):
     results = build_kit.build_set(
         club, season, outdir,
         install=True, game_root=game_root, quiet=True,
-        sponsor=brand, logo_dir=logos,
+        sponsor=brand, logo_dir=logos, sider=sider,
     )
     for slot, _atlas, ftex, design in results:
         _log("  built p%d -> %s (pattern=%s sponsor=%s)"

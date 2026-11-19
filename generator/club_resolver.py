@@ -12,15 +12,24 @@ into the same kind of row clubs.csv holds:
 
 Where the colours come from, best first
 ---------------------------------------
-   1. content/KitGenerator/club.txt   written by KitGenerator.lua from the LIVE
+   1. clubs.csv (MEASURED)            the club's colours read straight off its
+                                      own kit texture by measure_clubs.py.  This
+                                      is the club's real, current palette.
+   2. CURATED                         a hand-checked real-life palette for the
+                                      prominent clubs whose kits live inside a
+                                      CPK (so they cannot be measured).
+   3. content/KitGenerator/club.txt   written by KitGenerator.lua from the LIVE
                                       game (ctx.kits.get) -- the club's real kit
                                       colours, exactly as the game holds them.
-   2. content/kits/map.txt + the kit   the club's kit folder ("England\
+   4. content/kits/map.txt + the kit   the club's kit folder ("England\
       folder's p1/config.txt           Middlesbrough"); its config.txt carries
                                       ShirtColor1 / ShortsColor / ... keys.
-   3. a deterministic palette         derived from the team id with the same
+   5. a deterministic palette         derived from the team id with the same
                                       djb2 roll the Lua mod uses, so the colours
                                       are stable across sessions.
+
+The row also carries a `structure` (plain / vertical / horizontal / halves /
+check) which the renderer uses to pick a matching modern pattern family.
 
 Nothing here is random at run time: the same team id always resolves to the same
 colours, whether or not the game is running.
@@ -53,6 +62,48 @@ FALLBACK_PALETTES = [
 ]
 
 _MAP_CACHE = {}          # str(sider) -> {team_id: folder}
+_MEASURED = None         # {team_id: row} from clubs.csv (loaded once)
+_HERE = Path(__file__).resolve().parent
+
+
+# Curated real-life palettes for prominent clubs whose kits live inside a CPK and
+# so cannot be measured from a loose texture (see measure_clubs.py).  Keyed by
+# the game's team id:
+#     name: (primary, secondary, accent, structure)
+# These are the clubs' classic identities; the measured table still wins for the
+# clubs it covers.
+CURATED = {
+    100:  ("Manchester United", "#DA291C", "#111111", "#FBE122", "plain"),
+    101:  ("Arsenal", "#EF0107", "#FFFFFF", "#063672", "plain"),
+    102:  ("Chelsea", "#034694", "#FFFFFF", "#C8102E", "plain"),
+    103:  ("Liverpool", "#C8102E", "#F6EB61", "#00B2A9", "plain"),
+    107:  ("Aston Villa", "#95BFE5", "#670E36", "#FFFFFF", "plain"),
+    108:  ("Barcelona", "#A50044", "#004D98", "#EDBB00", "vertical"),
+    109:  ("Real Madrid", "#FEBE10", "#FFFFFF", "#00529F", "plain"),
+    110:  ("Valencia", "#F5F5F5", "#EE3524", "#F1BE48", "plain"),
+    116:  ("Ajax", "#D2122E", "#FFFFFF", "#000000", "plain"),
+    117:  ("Feyenoord", "#D71920", "#FFFFFF", "#000000", "halves"),
+    118:  ("PSV", "#ED1C24", "#FFFFFF", "#000000", "plain"),
+    119:  ("Internazionale", "#0068A8", "#000000", "#FFFFFF", "vertical"),
+    120:  ("Juventus", "#000000", "#FFFFFF", "#C8A84B", "vertical"),
+    121:  ("Milan", "#FB090B", "#000000", "#FFFFFF", "vertical"),
+    122:  ("Lazio", "#87D8F7", "#FFFFFF", "#0B1B3A", "plain"),
+    125:  ("Roma", "#8E1F2F", "#F0BC42", "#FFFFFF", "plain"),
+    126:  ("Dortmund", "#FDE100", "#000000", "#FFFFFF", "plain"),
+    128:  ("Leverkusen", "#E32221", "#000000", "#FFFFFF", "halves"),
+    130:  ("Galatasaray", "#A90432", "#FDB912", "#FFFFFF", "halves"),
+    131:  ("Celtic", "#018749", "#FFFFFF", "#000000", "plain"),
+    132:  ("Rangers", "#1B458F", "#FFFFFF", "#CC0000", "plain"),
+    172:  ("Atletico", "#CB3524", "#FFFFFF", "#1B2B5E", "vertical"),
+    173:  ("Manchester City", "#6CABDD", "#1C2C5B", "#FFFFFF", "plain"),
+    174:  ("Anderlecht", "#FFFFFF", "#4B2E83", "#000000", "plain"),
+    179:  ("Tottenham", "#FFFFFF", "#132257", "#000000", "plain"),
+    191:  ("Benfica", "#E00000", "#FFFFFF", "#000000", "plain"),
+    197:  ("Fenerbahce", "#FFED00", "#0A1A3C", "#FFFFFF", "vertical"),
+    265:  ("Sevilla", "#FFFFFF", "#D8232A", "#000000", "plain"),
+    327:  ("Napoli", "#12A0D7", "#FFFFFF", "#000000", "plain"),
+    5010: ("Leipzig", "#FFFFFF", "#DD0741", "#001F47", "plain"),
+}
 
 
 def tier_from_id(club_id):
@@ -225,31 +276,70 @@ def read_config_colors(path):
     return colors
 
 
+def _row_from_csv(club_id, r):
+    """A club row from a clubs.csv-shaped mapping (adds `structure`)."""
+    return {
+        "id": int(club_id),
+        "name": (r.get("name") or "").strip() or ("Club #%d" % int(club_id)),
+        "primary": _norm_hex(r.get("primary")) or "#034694",
+        "secondary": _norm_hex(r.get("secondary")) or "#FFFFFF",
+        "accent": _norm_hex(r.get("accent")) or "#C8102E",
+        "tier": (r.get("tier") or "").strip() or tier_from_id(club_id),
+        "structure": (r.get("structure") or "plain").strip() or "plain",
+    }
+
+
+def measured_row(club_id):
+    """The MEASURED clubs.csv row for `club_id` (or None). Loaded once."""
+    global _MEASURED
+    if _MEASURED is None:
+        _MEASURED = {}
+        p = _HERE / "clubs.csv"
+        if p.is_file():
+            import csv
+            with open(p, newline="", encoding="utf-8-sig") as f:
+                for r in csv.DictReader(f):
+                    try:
+                        cid = int(r.get("team_id"))
+                    except (TypeError, ValueError):
+                        continue
+                    _MEASURED.setdefault(cid, _row_from_csv(cid, r))
+    return _MEASURED.get(int(club_id))
+
+
 def resolve(club_id, sider=None, csv_row=None):
     """Return a club row for `club_id` (see the module docstring).
 
-    `csv_row` (a dict from clubs.csv) short-circuits the colour search: the
-    curated colours win, as before.
+    Precedence: measured clubs.csv -> curated -> live club.txt -> kit
+    config.txt -> deterministic fallback.  `csv_row` short-circuits the search.
     """
     club_id = int(club_id)
     sider = Path(sider or DEFAULT_SIDER)
 
+    # 1. measured (the club's own kit texture, via measure_clubs.py)
     if csv_row is not None:
-        return {"id": club_id,
-                "name": csv_row.get("name") or ("Club #%d" % club_id),
-                "primary": _norm_hex(csv_row.get("primary")) or "#034694",
-                "secondary": _norm_hex(csv_row.get("secondary")) or "#FFFFFF",
-                "accent": _norm_hex(csv_row.get("accent")) or "#C8102E",
-                "tier": csv_row.get("tier") or tier_from_id(club_id)}
+        return _row_from_csv(club_id, csv_row)
+    row = measured_row(club_id)
+    if row is not None:
+        return dict(row)
 
+    # 2. curated real-life palette for prominent CPK-only clubs
+    cur = CURATED.get(club_id)
+    if cur is not None:
+        name, primary, secondary, accent, structure = cur
+        return {"id": club_id, "name": name,
+                "primary": primary, "secondary": secondary, "accent": accent,
+                "tier": tier_from_id(club_id), "structure": structure}
+
+    # 3. live club.txt (written by the Lua mod from the running game)
     name = None
     colors = {}
-
     live = read_club_txt(sider)
     if live and live["id"] == club_id:
         name = live.get("name") or None
         colors = {k: live.get(k) for k in ("shirt1", "shirt2", "shorts", "socks", "uni1", "uni2")}
 
+    # 4. the club's kit folder / config.txt
     folder = read_map(sider).get(club_id)
     if folder:
         if not name:
@@ -262,7 +352,7 @@ def resolve(club_id, sider=None, csv_row=None):
     primary, secondary, accent = palette_from_colors(club_id, colors)
     return {"id": club_id, "name": name or ("Club #%d" % club_id),
             "primary": primary, "secondary": secondary, "accent": accent,
-            "tier": tier_from_id(club_id)}
+            "tier": tier_from_id(club_id), "structure": "plain"}
 
 
 if __name__ == "__main__":

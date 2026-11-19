@@ -11,8 +11,14 @@ team.
 ```
 Sponsor Office  ──sign──►  kit_request.txt  ──►  Python watcher  ──►  new .ftex kits
       │                                                                     │
-      └──────────── budget credit (transfer + salary) ◄───────────  livecpk override
+      └──────────── budget credit (transfer + salary) ◄─────────  content\kits\_KitGenerator
+                                                                    (served in Master League only)
 ```
+
+The generated kits are installed into a private store and handed to Sider through
+the `livecpk_make_key` / `livecpk_get_filepath` hooks **only while a Master League
+career is loaded**, so exhibition, edit mode and every other mode keep the game's
+own kits untouched.
 
 ---
 
@@ -23,8 +29,9 @@ Sponsor Office  ──sign──►  kit_request.txt  ──►  Python watcher 
   financial summary and a contract progress bar.
 - **Auto-detected club** — no hard-coded team id. Manual override, saved club, career
   learner and edit-mode fallback, most authoritative first.
-- **Real kit colours** — the club's own colours are read live from the game and used to
-  paint the generated kits.
+- **Real kit colours** — each club's colours are **measured off its own kit texture**
+  (`measure_clubs.py` → `clubs.csv`), with hand-checked palettes for the big clubs whose
+  kits live inside a CPK.
 - **140 sponsor brands** with colour + white logos; offers are synthesised for *any* club.
 - **Multi-year deals**, signing bonuses, a termination clause, and a per-season payment
   ledger so money is never paid twice.
@@ -44,25 +51,28 @@ content/                  Sider content      -> SiderAddons/content/
     logos/                  280 sponsor logos (colour + white)
 generator/                Python kit generator + background watcher
   build_kit.py              club + season -> home/away/third .ftex
-  club_resolver.py          team id -> club row (name, colours, tier) for ANY club
-  kit_render.py             generated design -> 2048x2048 UV atlas PNG
+  club_resolver.py          team id -> club row (name, colours, structure, tier)
+  kit_render.py             generated design -> 2048x2048 UV atlas PNG (+ badge/supplier/sponsor)
+  kit_source.py             club crest (emblem cache) + kit-supplier mark extraction
+  measure_clubs.py          rebuilds clubs.csv from the clubs' own kit textures
   ftex_io.py                real FL27 .ftex read/write (BC3/DXT5, 12 mips, zlib)
   watch_signed.py           background watcher: a signed deal rebuilds the kits
   setup_watcher.py          one-time deploy into the game
   deals.py, kit_gen.py, kit_regions.py, kit_patterns.py, logomaker.py, ...
-  clubs.csv                 curated team colours (team_id,name,primary,secondary,accent,tier)
+  clubs.csv                 MEASURED team colours (team_id,name,primary,secondary,accent,tier,src,structure)
   uv_masks/                 PES Master Kit Creator UV masks
-livecpk/                  Sider livecpk     -> SiderAddons/livecpk/
-  KitGenerator/             generated kit overrides are installed here
+content/kits/_KitGenerator/ private store the generated .ftex set is installed into
+                            (served in Master League only, via the livecpk hooks)
 tests/                    offline test harnesses (lupa)
 docs/                     install notes and the original readme
 ```
 
 ## Install (short version)
 
-1. Copy `modules/`, `content/` and `livecpk/` into your `SiderAddons` folder.
-2. Run `python generator/setup_watcher.py` once — it deploys the generator into the game
-   and writes `content/KitGenerator/watcher.cmd` and `brands.txt`.
+1. Copy `modules/` and `content/` into your `SiderAddons` folder.
+2. Run `python generator/setup_watcher.py` once — it deploys the generator into the game,
+   writes `content/KitGenerator/watcher.cmd` and `brands.txt`, adds
+   `cpk.root = ".\content\kits"` to `sider.ini`, and removes any old static kit override.
 3. In `sider.ini` make sure `luajit.ext.enabled = 1` and add
    `lua.module = "KitGenerator.lua"` (the Mod Menu, if used, must come first).
 4. Start a Master League with any team. Press **F8** to switch the office on, then open the
@@ -81,8 +91,9 @@ CFG.ENABLE_SPONSORSHIP = true   -- offers, signing, budget money
 CFG.MANAGED_CLUB       = nil    -- manual team id override (nil = auto-detect)
 ```
 
-Edit `generator/clubs.csv` to curate a club's colours:
-`team_id,name,primary,secondary,accent,tier`.
+`generator/clubs.csv` is **measured** from the clubs' own kit textures. To refresh it run
+`python generator/measure_clubs.py`; to override a prominent club whose kit lives inside a
+CPK, add it to `CURATED` in `generator/club_resolver.py`.
 
 ## Tests
 

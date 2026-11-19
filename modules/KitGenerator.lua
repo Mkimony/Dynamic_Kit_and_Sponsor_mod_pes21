@@ -759,7 +759,7 @@ local function ensure_season_deal(season)
   if not deal_active(season) then
     -- No deal for this season: make sure the club is back in its clean,
     -- sponsor-less kit.  Without this, a deal that has just expired would leave
-    -- its logo on the shirts forever (the livecpk override is a static file).
+    -- its logo on the shirts until the store is rebuilt.
     -- One request per club and season; the watcher dedupes by request id.
     -- Kits-only mode lands here every season, so the club gets a fresh kit
     -- each year.
@@ -1175,10 +1175,54 @@ function m.set_home_team_for_kits(ctx, team_id, edit_mode)
   refresh_date(ctx)
 end
 
-function m.make_key(ctx, filename)
-  refresh_date()
+-- ===== generated kits: served ONLY while a career (Master League) is loaded ==
+-- The generated .ftex set lives in a private store,
+--     <sider>\content\kits\_KitGenerator\u<team>p<slot>.ftex
+-- and is handed to Sider through the livecpk hooks below.  That means the game's
+-- own kits load untouched in exhibition / edit / every non-career mode, and the
+-- generated kit appears only in the Master League.
+local KIT_STORE = 'content/kits/_KitGenerator/'
+
+-- the generated file name for a team + slot, or nil when it has not been built
+local function generated_kit(cid, slot)
+  local name = string.format('u%04dp%d.ftex', cid, slot)
+  local f = io.open(sider_path(KIT_STORE .. name), 'rb')
+  if f then f:close(); return name end
   return nil
-end   -- kept inert; livecpk does the kit swap
+end
+
+-- True only while the Master League career is loaded: the ML calendar is
+-- readable AND the game is not in an exhibition (tournament_id 65535).
+local function career_loaded(ctx)
+  if ctx and ctx.tournament_id == 65535 then return false end
+  local y = game_date()
+  return y ~= nil
+end
+
+function m.make_key(ctx, filename)
+  -- hot path: called for every file Sider loads, so no side effects here -- the
+  -- date/club refresh already runs from set_teams / overlay_on / init.
+  if not CFG.ENABLE_KITS then return nil end
+  if not career_loaded(ctx) then return nil end
+  local cid = club_id()
+  if not cid then return nil end
+  local fn = tostring(filename)
+  local team, slot = string.match(fn, '[uU](%d+)[pP]([123])%.ftex')
+  if not team or tonumber(team) ~= cid then return nil end
+  local name = generated_kit(cid, tonumber(slot))
+  if not name then return nil end
+  return '_KitGenerator\\' .. name
+end
+
+-- Resolve our keys to the private store.  (common/kits.lua's handler resolves
+-- them the same way -- kroot .. key -- so the result is identical whichever
+-- handler Sider picks first.)
+function m.get_filepath(ctx, filename, key)
+  if type(key) == 'string' and key:sub(1, 13) == '_KitGenerator' then
+    return sider_path('content/kits/' .. key)
+  end
+  return nil
+end
 
 -- ===== background kit watcher =============================================
 local WATCHER_STARTED = false
@@ -1236,6 +1280,7 @@ function m.init(ctx)
   ctx.register('set_teams', m.set_teams)
   ctx.register('set_home_team_for_kits', m.set_home_team_for_kits)
   ctx.register('livecpk_make_key', m.make_key)
+  ctx.register('livecpk_get_filepath', m.get_filepath)
 end
 
 -- small read-only accessor (diagnostics / tests)

@@ -141,6 +141,71 @@ def write_cmd(sider, game_root):
     return cmd
 
 
+def clean_legacy_override(sider):
+    """Delete the old static livecpk kit overrides.
+
+    Earlier versions installed u<team>p<slot>.ftex under
+    livecpk\\KitGenerator\\Asset\\...\\#windx11, which the cpk.root list applies
+    in EVERY game mode.  The generated kits now live in content\\kits\\
+    _KitGenerator and are served only in Master League, so any leftover static
+    override must go.  Returns the number of files removed.
+    """
+    root = (Path(sider) / "livecpk" / "KitGenerator" / "Asset" / "model" /
+            "character" / "uniform" / "texture" / "#windx11")
+    n = 0
+    if root.is_dir():
+        for f in root.glob("u*p[123].ftex"):
+            try:
+                f.unlink()
+                n += 1
+            except OSError:
+                pass
+    return n
+
+
+def ensure_cpk_root(sider):
+    """Make sider.ini serve content\\kits, and stop serving livecpk\\KitGenerator.
+
+    The generated kits are handed to Sider as the key
+    ``_KitGenerator\\u<team>p<slot>.ftex``.  Registering ``.\\content\\kits`` as a
+    cpk.root makes that key resolve to our private store directly, so the kit
+    loads even if a future Sider version does not consult get_filepath for
+    make_key results.  The old ``.\\livecpk\\KitGenerator`` root is dropped so a
+    stale override can never be applied in a non-career mode.
+
+    Returns (changed, note) where note is a short human description.
+    """
+    ini = Path(sider) / "sider.ini"
+    if not ini.is_file():
+        return False, "sider.ini not found"
+    text = ini.read_text(encoding="utf-8", errors="replace")
+    nl = "\r\n" if "\r\n" in text else "\n"
+    lines = text.split(nl)
+
+    keep, dropped = [], 0
+    for ln in lines:
+        if ln.strip() == 'cpk.root = ".\\livecpk\\KitGenerator"':
+            dropped += 1
+            continue
+        keep.append(ln)
+
+    have_store = any(ln.strip() == 'cpk.root = ".\\content\\kits"' for ln in keep)
+    if not have_store:
+        idx = next((i for i, ln in enumerate(keep)
+                    if ln.strip().startswith("cpk.root")), len(keep))
+        keep.insert(idx, 'cpk.root = ".\\content\\kits"')
+
+    if not dropped and have_store:
+        return False, "already correct"
+    ini.write_text(nl.join(keep), encoding="utf-8", newline="")
+    bits = []
+    if not have_store:
+        bits.append("added content\\kits root")
+    if dropped:
+        bits.append(f"removed {dropped} livecpk\\KitGenerator root(s)")
+    return True, ", ".join(bits)
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -160,12 +225,17 @@ def main(argv=None):
     nc = deploy_content(sider)
     brands, nb = write_brands(sider)
     cmd = write_cmd(sider, game_root)
+    removed = clean_legacy_override(sider)
+    changed, note = ensure_cpk_root(sider)
 
     print(f"deployed {n} file(s) -> {dest}")
     print(f"deployed {nc} file(s) -> {sider / 'content' / 'KitGenerator'} (logos, deals.txt)")
     print(f"wrote {nb} brand(s)  -> {brands}")
     print(f"wrote launcher        -> {cmd}")
     print(f"pythonw               -> {_pythonw()}")
+    print(f"sider.ini             -> {'updated: ' + note if changed else note}")
+    if removed:
+        print(f"removed {removed} legacy livecpk kit override(s) (now ML-only via the store)")
     print()
     print("KitGenerator.lua will start the watcher automatically next time you "
           "launch the game.")

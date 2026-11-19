@@ -1,465 +1,261 @@
-team_id,name,primary,secondary,accent,tier
-102,Chelsea,#034694,#FFFFFF,#C8A84B,big
-106,Manchester City,#6CABDD,#FFFFFF,#1C2C5B,big
-107,Manchester United,#DA291C,#FFFFFF,#FBE122,big
-108,Liverpool,#C8102E,#FFFFFF,#00B2A9,big
-109,Tottenham Hotspur,#132257,#FFFFFF,#FFFFFF,big
-110,Everton,#003399,#FFFFFF,#003399,big
-111,West Ham United,#7A263A,#1BB1E7,#7A263A,big
-112,Newcastle United,#241F20,#FFFFFF,#241F20,big
-113,Aston Villa,#95BFE5,#670E36,#95BFE5,big
-114,Arsenal,#EF0107,#FFFFFF,#9C824A,big
-115,Fulham,#CC0000,#FFFFFF,#000000,mid
-116,Wolverhampton,#FDB913,#231F20,#FDB913,mid
-117,Crystal Palace,#1B458F,#C4122E,#1B458F,mid
-118,Brentford,#E30613,#FFFFFF,#FBB820,mid
-119,Brighton,#0057B8,#FFFFFF,#FFCD00,mid
-120,Bournemouth,#DA291C,#000000,#DA291C,mid
-121,Nottingham Forest,#DD0000,#FFFFFF,#DD0000,mid
-122,Leeds United,#1D428A,#FFFFFF,#FFCD00,big
-123,Southampton,#D71920,#FFFFFF,#130C0E,mid
-124,Ipswich Town,#005BAB,#FFFFFF,#FFFFFF,mid
-125,West Bromwich Albion,#122F67,#FFFFFF,#F7BE00,mid
-126,Burnley,#6C1D45,#5BB2D6,#6C1D45,mid
-127,Sunderland,#EB172B,#FFFFFF,#EB172B,mid
-128,Swansea City,#FFFFFF,#121212,#FFFFFF,mid
-129,Stoke City,#E03A3E,#FFFFFF,#1B449C,mid
-130,Derby County,#FFFFFF,#000000,#EBB400,mid
-131,Norwich City,#00A650,#FFF200,#00A650,mid
-132,Blackburn Rovers,#009EE0,#FFFFFF,#EF3340,mid
-133,Queens Park Rangers,#1D5BA4,#FFFFFF,#FFFFFF,mid
-134,Watford,#FBEE23,#ED2127,#111111,mid
-135,Cardiff City,#0070B5,#FFFFFF,#D01317,mid
-136,Bristol City,#D71920,#FFFFFF,#D71920,mid
-137,Preston North End,#004B8D,#FFFFFF,#F7BE00,mid
-138,Millwall,#004B8D,#FFFFFF,#004B8D,mid
-139,Coventry City,#009EE0,#FFFFFF,#009EE0,mid
-140,Birmingham City,#0000FF,#FFFFFF,#D71920,mid
-141,Portsmouth,#013494,#FFFFFF,#D7122A,mid
-142,Sheffield United,#EE2737,#FFFFFF,#EE2737,mid
-143,Hull City,#F5A12D,#000000,#F5A12D,mid
-200,Real Madrid,#FFFFFF,#FAD439,#FAD439,big
-201,FC Barcelona,#004D98,#A50044,#EDBB00,big
-202,Atletico Madrid,#CE3524,#FFFFFF,#272E61,big
-203,Sevilla FC,#D71920,#FFFFFF,#D71920,big
-204,Leicester City,#0053A0,#FFFFFF,#FDBE11,big
-205,Middlesbrough,#EF0107,#FFFFFF,#111111,mid
-206,Real Betis,#00954C,#FFFFFF,#FAD439,mid
-207,Villarreal,#009DE0,#FFED00,#FFED00,mid
-208,Real Sociedad,#004B8D,#FFFFFF,#FFFFFF,mid
-209,Athletic Club,#D71920,#FFFFFF,#D71920,mid
-210,Valencia CF,#F3AA00,#FFFFFF,#F3AA00,mid
-211,Celta Vigo,#8FC3E5,#FFFFFF,#8FC3E5,mid
-212,Getafe CF,#005BAB,#FFFFFF,#005BAB,mid
-213,Rayo Vallecano,#D71920,#FFFFFF,#FAD439,small
-214,Osasuna,#C00000,#004B8D,#C00000,small
-215,Espanyol,#004B8D,#FFFFFF,#D71920,mid
-216,Deportivo Alaves,#004B8D,#FFFFFF,#D71920,small
-217,Cadiz CF,#FFCD00,#004B8D,#FFCD00,small
-218,Girona FC,#D71920,#FFFFFF,#004B8D,mid
-219,Las Palmas,#FFCD00,#004B8D,#FFCD00,small
-220,Mallorca,#D71920,#000000,#D71920,small
-221,Granada CF,#D71920,#FFFFFF,#D71920,small
-225,Bayern Munich,#DC052D,#FFFFFF,#0066B2,big
-226,Borussia Dortmund,#FDE100,#000000,#FDE100,big
-227,Bayer Leverkusen,#D71920,#000000,#D71920,big
-228,Eintracht Frankfurt,#E1000F,#000000,#E1000F,mid
-229,RB Leipzig,#CC0000,#FFFFFF,#CC0000,big
-230,SC Freiburg,#D71920,#FFFFFF,#000000,mid
-231,VfB Stuttgart,#E32219,#FFFFFF,#E32219,mid
-232,Wolfsburg,#65B32E,#FFFFFF,#FFFFFF,mid
-233,Borussia Mönchengladbach,#000000,#FFFFFF,#000000,big
-234,TSG Hoffenheim,#1363A7,#FFFFFF,#1363A7,mid
-235,FC Augsburg,#BA3733,#FFFFFF,#007E3A,mid
-236,Werder Bremen,#009F3C,#FFFFFF,#009F3C,mid
-237,FC Köln,#D71920,#FFFFFF,#D71920,mid
-238,Union Berlin,#D71920,#FFFFFF,#D71920,mid
-239,FC Heidenheim,#CC0000,#FFFFFF,#111111,small
-240,Juventus,#000000,#FFFFFF,#000000,big
-241,Inter Milan,#010E80,#000000,#010E80,big
-242,AC Milan,#D71920,#000000,#D71920,big
-243,Napoli,#12A0C3,#FFFFFF,#12A0C3,big
-244,AS Roma,#D71920,#FFCD00,#D71920,big
-245,Lazio,#87CEEB,#FFFFFF,#87CEEB,big
-246,Atalanta,#005BAB,#000000,#000000,big
-247,Fiorentina,#702082,#FFFFFF,#702082,mid
-248,Torino FC,#8B1933,#FFFFFF,#8B1933,mid
-249,Udinese,#000000,#FFFFFF,#000000,mid
-250,Bologna,#D71920,#004B8D,#D71920,mid
-251,Monza,#D71920,#FFFFFF,#D71920,mid
-252,Sassuolo,#009F3C,#000000,#009F3C,mid
-253,Empoli,#004B8D,#FFFFFF,#004B8D,small
-254,Verona,#004B8D,#FFCD00,#FFCD00,small
-255,Lecce,#D71920,#F7BE00,#D71920,small
-256,Salernitana,#8B0000,#FFFFFF,#8B0000,small
-257,Frosinone,#F7BE00,#004B8D,#F7BE00,small
-258,Genoa,#D71920,#004B8D,#D71920,small
-260,Paris Saint-Germain,#004170,#D7001F,#FAD61D,big
-261,Olympique de Marseille,#009EE0,#FFFFFF,#009EE0,big
-262,Olympique Lyonnais,#D71920,#004B8D,#D71920,big
-263,Monaco,#CE1126,#FFFFFF,#FFFFFF,big
-264,LOSC Lille,#D71920,#FFFFFF,#D71920,big
-265,Rennes,#D71920,#000000,#D71920,mid
-266,Nice,#D71920,#000000,#D71920,mid
-267,Nantes,#F7BE00,#009F3C,#F7BE00,mid
-268,RC Lens,#FEE04B,#C4122E,#C4122E,mid
-269,Montpellier,#FF7900,#FFFFFF,#004B8D,mid
-270,Stade Reims,#D71920,#FFFFFF,#D71920,mid
-271,Strasbourg,#004B8D,#FFFFFF,#D71920,small
-272,Toulouse FC,#702082,#FFFFFF,#702082,small
-273,Brest,#D71920,#FFFFFF,#FFFFFF,small
-274,Metz,#702082,#FFCD00,#702082,small
-275,Lorient,#FF6600,#000000,#FF6600,small
-276,Le Havre AC,#004B8D,#FFFFFF,#D71920,small
-280,Ajax,#D71920,#FFFFFF,#D71920,big
-281,PSV Eindhoven,#D71920,#FFFFFF,#D71920,big
-282,Feyenoord,#D71920,#FFFFFF,#D71920,big
-283,AZ Alkmaar,#D71920,#FFFFFF,#FFFFFF,mid
-284,FC Twente,#D71920,#FFFFFF,#D71920,mid
-285,Utrecht,#D71920,#FFFFFF,#D71920,mid
-286,SC Heerenveen,#004B8D,#FFFFFF,#D71920,mid
-287,Sparta Rotterdam,#D71920,#FFFFFF,#D71920,small
-288,Go Ahead Eagles,#F7BE00,#D71920,#D71920,small
-289,PEC Zwolle,#004B8D,#FFFFFF,#004B8D,small
-290,NEC Nijmegen,#D71920,#FFFFFF,#004B8D,small
-291,Almere City,#D71920,#FFFFFF,#004B8D,small
-292,Excelsior Rotterdam,#D71920,#FFFFFF,#D71920,small
-295,SL Benfica,#D71920,#FFFFFF,#D71920,big
-296,FC Porto,#004B8D,#FFFFFF,#F7BE00,big
-297,Sporting CP,#009F3C,#FFFFFF,#F7BE00,big
-298,SC Braga,#D71920,#FFFFFF,#D71920,mid
-299,Vitoria SC,#000000,#FFFFFF,#009F3C,small
-300,CSKA Moscow,#D71920,#004B8D,#D71920,big
-301,Zenit St Petersburg,#004B8D,#FFFFFF,#D71920,big
-302,Spartak Moscow,#D71920,#FFFFFF,#D71920,big
-303,Lokomotiv Moscow,#D71920,#009F3C,#D71920,mid
-304,Galatasaray,#D71920,#F7BE00,#D71920,big
-305,Fenerbahçe,#F7BE00,#004B8D,#F7BE00,big
-306,Besiktas,#000000,#FFFFFF,#D71920,big
-307,Trabzonspor,#D71920,#004B8D,#D71920,mid
-310,Celtic,#009F3C,#FFFFFF,#FFFFFF,big
-311,Rangers,#004B8D,#FFFFFF,#D71920,big
-312,Hearts,#8B0000,#FFFFFF,#8B0000,mid
-313,Hibernian,#009F3C,#FFFFFF,#009F3C,mid
-314,Aberdeen,#D71920,#FFFFFF,#D71920,mid
-315,St Mirren,#000000,#FFFFFF,#D71920,small
-316,Motherwell,#D71920,#F7BE00,#D71920,small
-317,Ross County,#004B8D,#FFFFFF,#F7BE00,small
-318,St Johnstone,#005BAB,#FFFFFF,#005BAB,small
-319,Kilmarnock,#004B8D,#FFFFFF,#D71920,small
-320,Dundee United,#F7901E,#000000,#F7901E,small
-321,Dundee FC,#004B8D,#FFFFFF,#004B8D,small
-394,Sheffield Wednesday,#0033A0,#FFFFFF,#FFFFFF,mid
-1203,GNK Dinamo Zagreb,#0057A8,#FFFFFF,#FFFFFF,mid
-2525,HNK Hajduk Split,#FFFFFF,#0057A8,#0057A8,mid
-4139,St Pauli,#4E2D10,#FFFFFF,#E8A215,mid
-5009,Heidenheim,#CC0000,#FFFFFF,#111111,small
-5086,Oxford United,#FFCD00,#111111,#0000AA,mid
-71581,HNK Gorica,#005BAB,#FFFFFF,#D71920,small
-71582,HNK Rijeka,#005BAB,#FFFFFF,#FFCD00,mid
-71583,NK Istra 1961,#D71920,#FFFFFF,#D71920,small
-71584,NK Lokomotiva Zagreb,#004B8D,#FFFFFF,#004B8D,small
-71585,NK Osijek,#005BAB,#FFFFFF,#D71920,mid
-71586,NK Rudeš,#D71920,#FFFFFF,#D71920,small
-71588,NK Slaven Belupo,#0057A8,#FFFFFF,#D71920,small
-71589,NK Varaždin,#D71920,#FFFFFF,#004B8D,small
-71590,Aalesunds FK,#F7901E,#FFFFFF,#F7901E,small
-71591,Fredrikstad FK,#D71920,#FFFFFF,#D71920,small
-71592,Hamarkameratene,#D71920,#FFFFFF,#FFFFFF,small
-71593,IK Start,#005BAB,#FFFFFF,#005BAB,small
-71594,KFUM-Kameratene Oslo,#004B8D,#FFFFFF,#FFCD00,small
-71595,Kristiansund BK,#005BAB,#FFFFFF,#005BAB,small
-71596,Lillestrøm SK,#F7BE00,#000000,#F7BE00,small
-71597,Doncaster Rovers,#EE2737,#FFFFFF,#FFFFFF,small
-71598,Rosenborg BK,#000000,#FFFFFF,#FFCD00,mid
-71599,Sandefjord Fotball,#D71920,#FFFFFF,#D71920,small
-71600,Sarpsborg 08 FF,#D71920,#FFFFFF,#004B8D,small
-71601,SK Brann,#D71920,#FFFFFF,#D71920,small
-71602,Tromsø IL,#D71920,#FFFFFF,#004B8D,small
-71603,Vålerenga Fotball,#005BAB,#FFFFFF,#D71920,small
-71604,Bukovyna Chernivtsi,#004B8D,#FFFFFF,#FFCD00,small
-71605,Plymouth Argyle,#007B5E,#FFFFFF,#007B5E,small
-71606,Chornomorets Odesa,#005BAB,#FFFFFF,#FFFFFF,small
-71607,Epicentr,#F7BE00,#000000,#F7BE00,small
-71608,FC Kharkiv,#005BAB,#FFFFFF,#005BAB,small
-71609,Karpaty Lviv,#009F3C,#FFFFFF,#FFFFFF,small
-71610,Kolos Kovalivka,#D71920,#FFFFFF,#D71920,small
-71611,Kryvbas Kryvyi Rih,#D71920,#FFFFFF,#004B8D,small
-71612,Kudrivka,#004B8D,#FFFFFF,#FFCD00,small
-71613,Livyi Bereh Kyiv,#004B8D,#FFFFFF,#FFFFFF,small
-71614,LNZ Cherkasy,#009F3C,#FFFFFF,#009F3C,small
-71615,NC Veres Rivne,#D71920,#FFFFFF,#004B8D,small
-71616,Obolon Kyiv,#009F3C,#FFFFFF,#FFCD00,small
-71617,Crawley Town,#EE2737,#FFFFFF,#EE2737,small
-71618,Polissia Zhytomyr,#D71920,#FFFFFF,#D71920,small
-71619,Zoria Luhansk,#D71920,#FFFFFF,#004B8D,small
-71620,Fleetwood Town,#D7122A,#FFFFFF,#D7122A,small
-71621,Leicester City,#0053A0,#FFFFFF,#FDBE11,big
-71622,Oxford United,#FFCD00,#111111,#0000AA,mid
-71623,Sheffield Wednesday,#0033A0,#FFFFFF,#FFFFFF,mid
-71624,Amiens SC,#005BAB,#FFFFFF,#FFFFFF,small
-71625,SC Bastia,#004B8D,#FFFFFF,#D71920,small
-71626,Stade Malherbe Caen,#D71920,#005BAB,#D71920,small
-71627,Valenciennes FC,#D71920,#FFFFFF,#D71920,small
-71628,1. FC Heidenheim 1846,#CC0000,#FFFFFF,#111111,small
-71629,FC St. Pauli,#4E2D10,#FFFFFF,#E8A215,mid
-71630,VfL Wolfsburg,#65B32E,#FFFFFF,#FFFFFF,mid
-71631,AC Reggiana 1919,#D71920,#FFFFFF,#D71920,small
-71632,Delfino Pescara,#004B8D,#FFFFFF,#FFCD00,small
-71633,Spezia Calcio,#FFFFFF,#000000,#D71920,small
-71634,FC Volendam,#D71920,#FFCD00,#D71920,small
-71635,Heracles Almelo,#005BAB,#FFFFFF,#D71920,small
-71636,NAC Breda,#F7BE00,#D71920,#F7BE00,small
-71637,Livingston,#F7BE00,#000000,#F7BE00,small
-71638,Huesca,#004B8D,#FFFFFF,#D71920,small
-71639,Zaragoza,#005BAB,#FFFFFF,#D71920,small
-71640,Antalyaspor,#D71920,#FFFFFF,#F7BE00,mid
-71641,Fatih Karagümrük A.Ş,#D71920,#FFFFFF,#004B8D,small
-71642,Kayserispor,#D71920,#F7BE00,#D71920,mid
-71643,AFC Wimbledon,#0066CC,#FFFFFF,#FFCC00,small
-71644,Barnsley,#D71920,#FFFFFF,#D71920,small
-71645,Blackpool,#F68712,#FFFFFF,#F68712,small
-71646,Bradford City,#862633,#FFFFFF,#862633,small
-71647,Bromley,#FFFFFF,#000000,#FFFFFF,small
-71648,Burton Albion,#F7BE00,#000000,#F7BE00,small
-71649,Cambridge United,#F7BE00,#000000,#F7BE00,small
-71650,Doncaster Rovers,#EE2737,#FFFFFF,#FFFFFF,small
-71651,Huddersfield Town,#0E63AD,#FFFFFF,#FFFFFF,mid
-71652,Leyton Orient,#D71920,#FFFFFF,#D71920,small
-71653,Luton Town,#F78F1E,#FFFFFF,#002E5F,mid
-71654,Mansfield Town,#F7BE00,#003090,#F7BE00,small
-71655,Milton Keynes Dons,#FFCD00,#000000,#FFCD00,small
-71656,Notts County,#000000,#FFFFFF,#000000,small
-71657,Peterborough United,#004B8D,#FFFFFF,#004B8D,small
-71658,Plymouth Argyle,#007B5E,#FFFFFF,#007B5E,small
-71659,Reading,#004494,#FFFFFF,#004494,small
-71660,Stevenage,#D71920,#FFFFFF,#D71920,small
-71661,Stockport County,#004B8D,#FFFFFF,#004B8D,small
-71662,Wigan Athletic,#005BAB,#FFFFFF,#005BAB,small
-71663,Wycombe Wanderers,#005BAB,#FFFFFF,#005BAB,small
-71664,Accrington Stanley,#D71920,#FFFFFF,#D71920,small
-71665,Barnet,#F7BE00,#000000,#F7BE00,small
-71666,Bristol Rovers,#0033A0,#FFFFFF,#FFFFFF,small
-71667,Cheltenham Town,#D71920,#FFFFFF,#D71920,small
-71668,Chesterfield,#005BAB,#FFFFFF,#005BAB,small
-71669,Colchester United,#0066CC,#FFFFFF,#FFFFFF,small
-71670,Crawley Town,#EE2737,#FFFFFF,#EE2737,small
-71671,Crewe Alexandra,#D71920,#FFFFFF,#D71920,small
-71672,Exeter City,#D71920,#FFFFFF,#FFFFFF,small
-71673,Fleetwood Town,#D7122A,#FFFFFF,#D7122A,small
-71674,Gillingham,#005BAB,#FFFFFF,#005BAB,small
-71675,Grimsby Town,#000000,#FFFFFF,#FFCD00,small
-71676,Newport County,#F7BE00,#000000,#F7BE00,small
-71677,Northampton Town,#D71920,#FFFFFF,#D71920,small
-71678,Oldham Athletic,#005BAB,#FFFFFF,#005BAB,small
-71679,Port Vale,#D71920,#FFFFFF,#FFFFFF,small
-71680,Rochdale,#005BAB,#FFFFFF,#005BAB,small
-71681,Rotherham United,#D71920,#FFFFFF,#D71920,small
-71682,Salford City,#D71920,#FFFFFF,#D71920,small
-71683,Shrewsbury Town,#0066CC,#FFCD00,#FFCD00,small
-71684,Swindon Town,#D71920,#FFFFFF,#D71920,small
-71685,Tranmere Rovers,#005BAB,#FFFFFF,#005BAB,small
-71686,Walsall,#D71920,#FFFFFF,#D71920,small
-71687,York City,#D71920,#FFFFFF,#FFFFFF,small
-71688,AS Cannes,#D71920,#FFFFFF,#FFCD00,small
-71689,Bourg en Bresse 01,#005BAB,#FFFFFF,#005BAB,small
-71690,FC Versailles,#004B8D,#FFFFFF,#FFCD00,small
-71691,FC Villefranche,#D71920,#FFFFFF,#D71920,small
-71692,Football Club Fleury 91,#D71920,#FFFFFF,#D71920,small
-71693,Football Club Rouen 1899,#009F3C,#FFFFFF,#FFFFFF,small
-71694,Arminia Bielefeld,#006CB7,#FFFFFF,#111111,mid
-71695,Paris 13 Atlético,#D71920,#FFFFFF,#004B8D,small
-71696,Quevilly-Rouen Metropole,#D71920,#FFFFFF,#004B8D,small
-71697,SC Aubagne Air Bel,#D71920,#FFFFFF,#D71920,small
-71698,US Concarneau,#FFCD00,#000000,#004B8D,small
-71699,US Orléans,#F7BE00,#D71920,#F7BE00,small
-71700,US Thionville Lusitanos,#D71920,#FFFFFF,#004B8D,small
-71701,Vendée FC La Roche,#D71920,#FFFFFF,#004B8D,small
-71702,1. FC Kaiserslautern,#D71920,#FFFFFF,#D71920,mid
-71703,1. FC Magdeburg,#005BAB,#FFFFFF,#005BAB,mid
-71704,1. FC Nürnberg,#D71920,#FFFFFF,#D71920,mid
-71705,DSC Arminia Bielefeld,#006CB7,#FFFFFF,#111111,mid
-71706,Eintracht Braunschweig,#004B8D,#FFCD00,#FFCD00,small
-71707,FC Energie Cottbus,#D71920,#FFFFFF,#D71920,small
-71708,Hannover 96,#009F3C,#FFFFFF,#009F3C,mid
-71709,Hertha BSC,#005BAB,#FFFFFF,#FFFFFF,mid
-71710,Holstein Kiel,#D71920,#FFFFFF,#D71920,mid
-71711,Karlsruher SC,#005BAB,#FFFFFF,#D71920,mid
-71712,SG Dynamo Dresden,#F7BE00,#000000,#000000,small
-71713,SpVgg Greuther Fürth,#006E32,#FFFFFF,#006E32,small
-71714,SV Darmstadt 98,#005BAB,#FFFFFF,#005BAB,small
-71715,VfL Bochum 1848,#005BAB,#FFFFFF,#005BAB,mid
-71716,VfL Osnabrück,#004B8D,#FFFFFF,#004B8D,small
-71717,1. FC Saarbrücken,#005BAB,#FFFFFF,#005BAB,small
-71718,F.C. Hansa Rostock,#005BAB,#FFFFFF,#005BAB,small
-71719,FC Ingolstadt 04,#D71920,#FFFFFF,#D71920,small
-71720,FC Viktoria Köln 1904,#D71920,#FFFFFF,#F7BE00,small
-71721,FC Würzburger Kickers,#D71920,#FFFFFF,#004B8D,small
-71722,Fortuna Düsseldorf 1895,#D71920,#FFFFFF,#D71920,mid
-71723,MSV Duisburg,#005BAB,#FFFFFF,#F7BE00,small
-71724,Rot-Weiss Essen,#D71920,#FFFFFF,#D71920,small
-71725,SC Fortuna Köln,#D71920,#FFFFFF,#D71920,small
-71726,SC Preußen Münster,#005BAB,#FFFFFF,#005BAB,small
-71727,SG Sonnenhof Großaspach,#009F3C,#FFFFFF,#009F3C,small
-71728,Sportclub Verl,#005BAB,#FFFFFF,#005BAB,small
-71729,SSV Jahn Regensburg,#D71920,#FFFFFF,#D71920,small
-71730,SV Meppen,#004B8D,#FFFFFF,#004B8D,small
-71731,SV Waldhof Mannheim 07,#005BAB,#FFFFFF,#F7BE00,small
-71732,SV Wehen Wiesbaden,#D71920,#FFFFFF,#D71920,small
-71733,TSG Hoffenheim II,#1363A7,#FFFFFF,#1363A7,small
-71734,TSV Alemannia Aachen,#F7BE00,#000000,#F7BE00,small
-71735,TSV Havelse 1912,#004B8D,#FFFFFF,#004B8D,small
-71736,VfB Stuttgart II,#D71920,#FFFFFF,#FFFFFF,small
-71737,Atalanta Under 23,#005BAB,#000000,#000000,small
-71738,Campobasso Football Club,#D71920,#FFFFFF,#D71920,small
-71739,Forlì,#D71920,#FFFFFF,#004B8D,small
-71740,Grosseto 1912,#D71920,#FFFFFF,#D71920,small
-71741,Gubbio,#D71920,#FFFFFF,#D71920,small
-71742,Guidonia Montecelio,#005BAB,#FFFFFF,#005BAB,small
-71743,Latina Calcio 1932,#005BAB,#FFFFFF,#D71920,small
-71744,Livorno 1915,#D71920,#F7BE00,#D71920,small
-71745,Ostiamare Lido Calcio,#005BAB,#FFFFFF,#005BAB,small
-71746,Perugia,#D71920,#FFFFFF,#D71920,small
-71747,Pianese,#009F3C,#FFFFFF,#FFFFFF,small
-71748,Pineto Calcio,#005BAB,#FFFFFF,#005BAB,small
-71749,Ravenna,#F7BE00,#000000,#D71920,small
-71750,Sambenedettese,#005BAB,#FFFFFF,#005BAB,small
-71751,Torres,#D71920,#FFFFFF,#004B8D,small
-71752,Vado,#D71920,#FFFFFF,#D71920,small
-71753,Vis Pesaro 1898,#D71920,#005BAB,#D71920,small
-71754,CD Atlas,#D71920,#000000,#D71920,mid
-71755,CD Guadalajara,#D71920,#FFFFFF,#D71920,big
-71756,CD Necaxa,#D71920,#FFFFFF,#004B8D,mid
-71757,CD Santos Laguna,#009F3C,#FFFFFF,#F7BE00,big
-71758,CF Atlante,#005BAB,#F7BE00,#005BAB,small
-71759,CF Puebla de la Franja,#FFFFFF,#005BAB,#D71920,mid
-71760,Club Atlético San Luis,#D71920,#F7BE00,#D71920,mid
-71761,Club León,#009F3C,#FFFFFF,#F7BE00,big
-71762,Deportivo Toluca,#D71920,#FFFFFF,#D71920,big
-71763,Fútbol Club Juárez,#D71920,#FFFFFF,#F7BE00,small
-71764,Pachuca CF,#005BAB,#FFFFFF,#005BAB,big
-71765,Pumas de la UNAM,#004B8D,#F7BE00,#004B8D,big
-71766,Querétaro FC,#005BAB,#FFFFFF,#D71920,mid
-71767,Tijuana,#D71920,#000000,#D71920,mid
-71768,Almere City FC,#D71920,#FFFFFF,#004B8D,small
-71769,De Graafschap,#009F3C,#FFFFFF,#F7BE00,small
-71770,FC Den Bosch,#D71920,#FFFFFF,#D71920,small
-71771,FC Dordrecht,#D71920,#FFFFFF,#F7BE00,small
-71772,FC Eindhoven,#004B8D,#FFFFFF,#FFCD00,small
-71773,FC Emmen,#D71920,#FFFFFF,#D71920,small
-71774,Helmond Sport,#D71920,#FFFFFF,#F7BE00,small
-71775,MVV Maastricht,#D71920,#FFFFFF,#D71920,small
-71776,RKC Waalwijk,#F7BE00,#004B8D,#F7BE00,small
-71777,Roda JC Kerkrade,#F7BE00,#000000,#004B8D,small
-71778,TOP Oss,#D71920,#FFFFFF,#004B8D,small
-71779,Vitesse Arnhem,#F7BE00,#000000,#F7BE00,mid
-71780,VVV-Venlo,#F7BE00,#000000,#D71920,small
-71781,Arbroath,#D71920,#FFFFFF,#D71920,small
-71782,Ayr United,#005BAB,#FFFFFF,#FFFFFF,small
-71783,Dunfermline Athletic,#000000,#FFFFFF,#000000,small
-71784,Greenock Morton,#FFFFFF,#004B8D,#F7BE00,small
-71785,Inverness CT,#D71920,#004B8D,#D71920,small
-71786,Partick Thistle,#F7901E,#FFFFFF,#D71920,small
-71787,Queen's Park,#F7BE00,#000000,#F7BE00,small
-71788,Raith Rovers,#005BAB,#FFFFFF,#005BAB,small
-71789,Stenhousemuir,#D71920,#FFFFFF,#F7BE00,small
-71790,Alcorcón,#005BAB,#FFFFFF,#004B8D,small
-71791,Algeciras,#009F3C,#FFFFFF,#009F3C,small
-71792,Antequera C.F,#D71920,#FFFFFF,#004B8D,small
-71793,C.E. Europa,#005BAB,#FFFFFF,#F7BE00,small
-71794,Cartagena,#D71920,#FFFFFF,#F7BE00,small
-71795,H. Alicante,#D71920,#FFFFFF,#004B8D,small
-71796,Ibiza,#D71920,#FFFFFF,#F7BE00,small
-71797,Murcia,#D71920,#FFFFFF,#F7BE00,small
-71798,R. Jaén,#F7BE00,#004B8D,#F7BE00,small
-71799,R. Majadahonda,#D71920,#FFFFFF,#D71920,small
-71800,Tarragona,#D71920,#FFFFFF,#004B8D,small
-71801,Teruel,#009F3C,#FFFFFF,#009F3C,small
-71802,Torremolinos,#005BAB,#FFFFFF,#004B8D,small
-71803,U.E. Sant Andreu,#D71920,#FFFFFF,#D71920,small
-71805,Águilas F.C,#D71920,#FFFFFF,#F7BE00,small
-71806,Etoile Carouge FC,#D71920,#FFFFFF,#F7BE00,small
-71807,FC Aarau,#D71920,#FFFFFF,#F7BE00,small
-71808,FC Rapperswil-Jona,#004B8D,#FFFFFF,#D71920,small
-71809,FC Stade Lausanne-Ouchy,#009F3C,#FFFFFF,#FFFFFF,small
-71810,FC Stade Nyonnais,#004B8D,#FFFFFF,#004B8D,small
-71811,FC Wil 1900,#D71920,#FFFFFF,#004B8D,small
-71812,FC Winterthur,#005BAB,#FFFFFF,#005BAB,small
-71813,Neuchâtel Xamax FCS,#D71920,#FFFFFF,#D71920,small
-71814,SC Kriens,#D71920,#FFFFFF,#004B8D,small
-71815,Yverdon Sport FC,#005BAB,#FFFFFF,#D71920,small
-71816,Ankara Keçiörengücü,#004B8D,#FFFFFF,#D71920,small
-71817,Bandırma Spor,#005BAB,#FFFFFF,#D71920,small
-71818,Batman Petrol Spor A.Ş,#005BAB,#FFFFFF,#D71920,small
-71819,Bodrum Futbol Kulübü,#005BAB,#FFFFFF,#F7BE00,small
-71820,Boluspor,#D71920,#FFFFFF,#004B8D,small
-71821,Bursaspor,#009F3C,#FFFFFF,#F7BE00,small
-71822,Esenler Erokspor,#D71920,#FFFFFF,#004B8D,small
-71823,Iğdır Futbol Kulübü,#004B8D,#FFFFFF,#004B8D,small
-71824,İstanbulspor A.Ş,#F7BE00,#000000,#D71920,small
-71825,Manisa Futbol Kulübü,#D71920,#FFFFFF,#004B8D,small
-71826,Mardin 1969 Spor,#D71920,#FFFFFF,#004B8D,small
-71827,Muğlaspor Kulübü,#009F3C,#FFFFFF,#009F3C,small
-71828,Pendikspor Futbol A.Ş,#D71920,#FFFFFF,#004B8D,small
-71829,Sarıyer,#D71920,#FFFFFF,#F7BE00,small
-71830,Sivasspor,#D71920,#FFFFFF,#F7BE00,mid
-71831,Van Spor Futbol Kulübü,#004B8D,#FFFFFF,#004B8D,small
-71832,Ümraniyespor,#004B8D,#FFFFFF,#D71920,small
-71833,Birmingham Legion FC,#005BAB,#FFFFFF,#D71920,small
-71834,Brooklyn FC,#000000,#FFFFFF,#D71920,small
-71835,Charleston Battery,#F7BE00,#004B8D,#F7BE00,small
-71836,Detroit City FC,#D71920,#004B8D,#D71920,small
-71837,Hartford Athletic,#009F3C,#F7BE00,#009F3C,small
-71838,Indy Eleven,#F7BE00,#000000,#F7BE00,small
-71839,Loudoun United FC,#005BAB,#FFFFFF,#D71920,small
-71840,Louisville City FC,#005BAB,#FFFFFF,#F7BE00,small
-71841,Miami FC,#D71920,#000000,#D71920,small
-71842,Pittsburgh Riverhounds,#F7BE00,#D71920,#F7BE00,small
-71843,Rhode Island FC,#004B8D,#FFFFFF,#D71920,small
-71844,Sporting JAX,#004B8D,#FFFFFF,#004B8D,small
-71845,Tampa Bay Rowdies,#009F3C,#F7BE00,#009F3C,small
-71867,AFC Wimbledon,#0066CC,#FFFFFF,#FFCC00,small
-71868,Barnsley,#D71920,#FFFFFF,#D71920,small
-71869,Blackpool,#F68712,#FFFFFF,#F68712,small
-71870,Bradford City,#862633,#FFFFFF,#862633,small
-71871,Bromley,#FFFFFF,#000000,#FFFFFF,small
-71872,Burton Albion,#F7BE00,#000000,#F7BE00,small
-71873,Cambridge United,#F7BE00,#000000,#F7BE00,small
-71874,Doncaster Rovers,#EE2737,#FFFFFF,#FFFFFF,small
-71875,Huddersfield Town,#0E63AD,#FFFFFF,#FFFFFF,mid
-71876,Leyton Orient,#D71920,#FFFFFF,#D71920,small
-71877,Luton Town,#F78F1E,#FFFFFF,#002E5F,mid
-71878,Mansfield Town,#F7BE00,#003090,#F7BE00,small
-71879,Milton Keynes Dons,#FFCD00,#000000,#FFCD00,small
-71880,Notts County,#000000,#FFFFFF,#000000,small
-71881,Peterborough United,#004B8D,#FFFFFF,#004B8D,small
-71882,Plymouth Argyle,#007B5E,#FFFFFF,#007B5E,small
-71883,Reading,#004494,#FFFFFF,#004494,small
-71884,Stevenage,#D71920,#FFFFFF,#D71920,small
-71885,Stockport County,#004B8D,#FFFFFF,#004B8D,small
-71886,Wigan Athletic,#005BAB,#FFFFFF,#005BAB,small
-71887,Wycombe Wanderers,#005BAB,#FFFFFF,#005BAB,small
-72014,Accrington Stanley,#D71920,#FFFFFF,#D71920,small
-72015,Barnet,#F7BE00,#000000,#F7BE00,small
-72016,Bristol Rovers,#0033A0,#FFFFFF,#FFFFFF,small
-72017,Cheltenham Town,#D71920,#FFFFFF,#D71920,small
-72018,Chesterfield,#005BAB,#FFFFFF,#005BAB,small
-72019,Colchester United,#0066CC,#FFFFFF,#FFFFFF,small
-72020,Crawley Town,#EE2737,#FFFFFF,#EE2737,small
-72021,Crewe Alexandra,#D71920,#FFFFFF,#D71920,small
-72022,Exeter City,#D71920,#FFFFFF,#FFFFFF,small
-72023,Fleetwood Town,#D7122A,#FFFFFF,#D7122A,small
-72024,Gillingham,#005BAB,#FFFFFF,#005BAB,small
-72025,Grimsby Town,#000000,#FFFFFF,#FFCD00,small
-72026,Newport County,#F7BE00,#000000,#F7BE00,small
-72027,Northampton Town,#D71920,#FFFFFF,#D71920,small
-72028,Oldham Athletic,#005BAB,#FFFFFF,#005BAB,small
-72029,Port Vale,#D71920,#FFFFFF,#FFFFFF,small
-72030,Rochdale,#005BAB,#FFFFFF,#005BAB,small
-72031,Rotherham United,#D71920,#FFFFFF,#D71920,small
-72032,Salford City,#D71920,#FFFFFF,#D71920,small
-72033,Shrewsbury Town,#0066CC,#FFCD00,#FFCD00,small
-72034,Swindon Town,#D71920,#FFFFFF,#D71920,small
-72035,Tranmere Rovers,#005BAB,#FFFFFF,#005BAB,small
-72036,Walsall,#D71920,#FFFFFF,#D71920,small
-72037,York City,#D71920,#FFFFFF,#FFFFFF,small
+team_id,name,primary,secondary,accent,tier,src,structure
+1203,Dinamo Zagreb,#084696,#EBECEB,#707278,mid,measured,plain
+2525,Hajduk Split,#E7E7E7,#0849B5,#E72236,small,measured,horizontal
+71581,HNK Gorica,#F8F8F8,#101012,#707278,small,measured,plain
+71582,HNK Rijeka,#F8F8F8,#58C8D8,#121214,mid,measured,plain
+71583,NK Istra 1961,#D8E848,#48A868,#121214,big,measured,horizontal
+71584,NK Lokomotiva Zagreb,#3858C8,#F8F8F8,#707278,small,measured,halves
+71585,NK Osijek,#F8F8F8,#0838A8,#707278,mid,measured,horizontal
+71586,NK Rudeš,#3858C8,#F8F8F8,#707278,big,measured,plain
+71588,NK Slaven Belupo,#2858B8,#98D8F8,#707278,mid,measured,plain
+71589,NK Varaždin,#3868D8,#080808,#707278,big,measured,plain
+71590,Aalesunds FK,#F86828,#101012,#707278,big,measured,plain
+71591,Fredrikstad FK,#F8F8F8,#D81828,#121214,small,measured,plain
+71592,Hamarkameratene,#F8F8F8,#089868,#121214,mid,measured,plain
+71593,IK Start,#F8E828,#101012,#707278,big,measured,plain
+71594,KFUM-Kameratene Oslo,#F8F8F8,#C81818,#707278,small,measured,halves
+71595,Kristiansund BK,#282838,#082898,#F2F2F4,mid,measured,plain
+71596,Lillestrøm SK,#F8D808,#090808,#707278,big,measured,vertical
+71598,Rosenborg BK,#F8F8F8,#101012,#707278,mid,measured,plain
+71599,Sandefjord Fotball,#0858B8,#F5F5F5,#707278,big,measured,plain
+71600,Sarpsborg 08 FF,#183888,#F8F8F8,#707278,big,measured,halves
+71601,SK Brann,#C81818,#F5F5F5,#707278,small,measured,plain
+71602,Tromsø IL,#E80808,#F8F8F8,#121214,mid,measured,halves
+71603,Vålerenga Fotball,#0858B8,#C81818,#707278,big,measured,plain
+71604,Bukovyna Chernivtsi,#F8F808,#101012,#707278,small,measured,plain
+71606,Chornomorets Odesa,#080808,#0858C8,#707278,big,measured,vertical
+71607,Epicentr,#580858,#F808F8,#707278,small,measured,plain
+71608,FC Kharkiv,#380818,#D89808,#707278,mid,measured,plain
+71609,Karpaty Lviv,#F8F8F8,#088838,#707278,big,measured,halves
+71610,Kolos Kovalivka,#F8F8F8,#101012,#707278,big,measured,plain
+71611,Kryvbas Kryvyi Rih,#F8F8F8,#E80808,#121214,small,measured,plain
+71612,Kudrivka,#3868E8,#F8F8F8,#121214,mid,measured,plain
+71613,Livyi Bereh Kyiv,#F8F708,#101012,#707278,big,measured,plain
+71614,LNZ Cherkasy,#480878,#F5F5F5,#707278,small,measured,plain
+71615,NC Veres Rivne,#E80808,#080808,#707278,mid,measured,halves
+71616,Obolon Kyiv,#088838,#F5F5F5,#707278,big,measured,plain
+71618,Polissia Zhytomyr,#288858,#384858,#707278,mid,measured,plain
+71619,Zoria Luhansk,#F0F0F0,#101012,#707278,big,measured,plain
+71621,Leicester City,#1848B8,#F8F8F8,#707278,small,measured,plain
+71622,Oxford United,#F8C808,#181838,#707278,mid,measured,vertical
+71623,Sheffield Wednesday,#0838A8,#F8F8F8,#707278,big,measured,halves
+71624,Amiens SC,#F8F8F8,#101012,#707278,small,measured,halves
+71625,SC Bastia,#0858D8,#F8F8F8,#707278,mid,measured,plain
+71626,Stade Malherbe Caen,#0858D8,#E80808,#707278,big,measured,plain
+71627,Valenciennes FC,#E80808,#F8F8F8,#121214,small,measured,plain
+71628,1. FC Heidenheim 1846,#B84838,#282838,#707278,mid,measured,plain
+71629,FC St. Pauli,#584838,#F8F8F8,#707278,big,measured,halves
+71630,VfL Wolfsburg,#185838,#F5F5F5,#707278,big,measured,plain
+71631,AC Reggiana 1919,#783848,#2858B8,#707278,small,measured,plain
+71632,Delfino Pescara,#2888C8,#F8F8F8,#083858,mid,measured,halves
+71633,Spezia Calcio,#F8F8F8,#101012,#707278,big,measured,plain
+71634,FC Volendam,#E85808,#F8F8F8,#121214,small,measured,vertical
+71635,Heracles Almelo,#080808,#F5F5F5,#707278,mid,measured,halves
+71636,NAC Breda,#F8D808,#080808,#707278,big,measured,plain
+71637,Livingston,#E8B848,#080808,#707278,small,measured,horizontal
+71638,Huesca,#183868,#B80808,#707278,mid,measured,plain
+71639,Zaragoza,#F8F8F8,#78B8F8,#121214,big,measured,plain
+71640,Antalyaspor,#F8F8F8,#C81818,#707278,big,measured,plain
+71641,Fatih Karagümrük A.Ş,#181818,#A81828,#707278,small,measured,vertical
+71642,Kayserispor,#B82838,#E8D808,#707278,mid,measured,plain
+71643,AFC Wimbledon,#083878,#E8B848,#707278,big,measured,plain
+71644,Barnsley,#E80828,#581838,#707278,small,measured,plain
+71645,Blackpool,#F86828,#F8F8F8,#121214,mid,measured,plain
+71646,Bradford City,#682838,#080808,#F2F2F4,big,measured,plain
+71647,Bromley,#F8F8F8,#101012,#707278,small,measured,halves
+71648,Burton Albion,#F8C828,#282828,#707278,mid,measured,halves
+71649,Cambridge United,#F8A808,#080808,#707278,big,measured,plain
+71650,Doncaster Rovers,#D80828,#F8F8F8,#182848,big,measured,horizontal
+71651,Huddersfield Town,#0878B8,#F8F8F8,#121214,small,measured,halves
+71652,Leyton Orient,#E80828,#080808,#707278,mid,measured,plain
+71653,Luton Town,#D83818,#081828,#707278,big,measured,plain
+71654,Mansfield Town,#F8D848,#083878,#707278,small,measured,plain
+71655,Milton Keynes Dons,#F8F8F8,#101012,#707278,mid,measured,plain
+71656,Notts County,#080808,#F5F5F5,#707278,big,measured,halves
+71657,Peterborough United,#0858B8,#383848,#707278,small,measured,plain
+71658,Plymouth Argyle,#284838,#F8F8F8,#707278,mid,measured,plain
+71659,Reading,#F8F8F8,#2858B8,#707278,big,measured,horizontal
+71660,Stevenage,#F8F8F8,#A91828,#707278,big,measured,vertical
+71661,Stockport County,#0858B8,#282848,#707278,small,measured,plain
+71662,Wigan Athletic,#084888,#F8F8F8,#707278,mid,measured,plain
+71663,Wycombe Wanderers,#082848,#F8F8F8,#707278,big,measured,plain
+71664,Accrington Stanley,#F8F8F8,#D83848,#121214,small,measured,plain
+71665,Barnet,#F88838,#080808,#707278,mid,measured,plain
+71666,Bristol Rovers,#0838A8,#F8F8F8,#707278,big,measured,plain
+71667,Cheltenham Town,#E81828,#F8F8F8,#121214,small,measured,halves
+71668,Chesterfield,#283878,#F8F8F8,#707278,mid,measured,plain
+71669,Colchester United,#F8F8F8,#0868B8,#F8D868,big,measured,halves
+71670,Crawley Town,#D81828,#F8F8F8,#121214,big,measured,plain
+71671,Crewe Alexandra,#E83838,#F8F8F8,#121214,small,measured,plain
+71672,Exeter City,#B80818,#F8F8F8,#707278,mid,measured,halves
+71673,Fleetwood Town,#D81818,#F8F8F8,#121214,big,measured,vertical
+71674,Gillingham,#0868B8,#183888,#707278,small,measured,plain
+71675,Grimsby Town,#080808,#E80808,#707278,mid,measured,halves
+71676,Newport County,#F8A838,#080808,#707278,big,measured,halves
+71677,Northampton Town,#712831,#F8F8F8,#707278,small,measured,plain
+71678,Oldham Athletic,#283888,#F8F8F8,#707278,mid,measured,plain
+71679,Port Vale,#E8D8D8,#101012,#707278,big,measured,plain
+71680,Rochdale,#1858A8,#080808,#707278,big,measured,plain
+71681,Rotherham United,#C81828,#F8F8F8,#707278,small,measured,vertical
+71682,Salford City,#C02831,#E8D8A8,#707278,mid,measured,plain
+71683,Shrewsbury Town,#2868C8,#F8A848,#707278,big,measured,vertical
+71684,Swindon Town,#A80808,#F8F8F8,#707278,small,measured,plain
+71685,Tranmere Rovers,#F8F8F8,#283898,#707278,mid,measured,plain
+71686,Walsall,#E81838,#080808,#707278,big,measured,vertical
+71687,York City,#D82828,#F8F8F8,#121214,small,measured,plain
+71688,AS Cannes,#F8F8F8,#E80808,#121214,mid,measured,halves
+71689,Bourg en Bresse 01,#0858D8,#F8F8F8,#707278,big,measured,plain
+71690,FC Versailles,#2858B8,#F8F8F8,#707278,big,measured,plain
+71691,FC Villefranche,#0858D8,#F8F8F8,#707278,small,measured,plain
+71692,Football Club Fleury 91,#F8F8F8,#B80808,#707278,mid,measured,horizontal
+71693,Football Club Rouen 1899,#E80808,#F8F8F8,#121214,big,measured,plain
+71695,Paris 13 Atlético,#080808,#F5F5F5,#707278,mid,measured,plain
+71696,Quevilly-Rouen Metropole,#F8D808,#E80808,#121214,big,measured,plain
+71697,SC Aubagne Air Bel,#082868,#F8F808,#707278,small,measured,plain
+71698,US Concarneau,#0858D8,#F8F8F8,#707278,mid,measured,plain
+71699,US Orléans,#F8F808,#101012,#707278,big,measured,plain
+71700,US Thionville Lusitanos,#A8A8C8,#787898,#121214,big,measured,plain
+71701,Vendée FC La Roche,#D82828,#F8F8F8,#121214,small,measured,plain
+71702,1. FC Kaiserslautern,#D82828,#F8F8F8,#121214,mid,measured,plain
+71703,1. FC Magdeburg,#085898,#083858,#707278,big,measured,plain
+71704,1. FC Nürnberg,#582838,#080808,#F2F2F4,small,measured,halves
+71705,DSC Arminia Bielefeld,#183868,#F8F8F8,#707278,mid,measured,plain
+71706,Eintracht Braunschweig,#F8C808,#185888,#707278,big,measured,plain
+71707,FC Energie Cottbus,#C80838,#F8F8F8,#707278,small,measured,plain
+71708,Hannover 96,#D83838,#080808,#707278,mid,measured,vertical
+71709,Hertha BSC,#282848,#F8F8F8,#707278,big,measured,plain
+71710,Holstein Kiel,#184888,#B89848,#707278,big,measured,plain
+71711,Karlsruher SC,#184888,#F5F5F5,#707278,small,measured,plain
+71712,SG Dynamo Dresden,#F8C838,#080808,#707278,mid,measured,plain
+71713,SpVgg Greuther Fürth,#589868,#F8F8F8,#121214,big,measured,horizontal
+71714,SV Darmstadt 98,#0858A8,#F8F8F8,#707278,small,measured,plain
+71715,VfL Bochum 1848,#282848,#F8F8F8,#707278,mid,measured,plain
+71716,VfL Osnabrück,#583898,#F8F8F8,#707278,big,measured,halves
+71717,1. FC Saarbrücken,#081818,#0838C8,#F8F808,small,measured,vertical
+71718,F.C. Hansa Rostock,#0878B8,#F8F8F8,#121214,mid,measured,plain
+71719,FC Ingolstadt 04,#E80808,#080808,#707278,big,measured,plain
+71720,FC Viktoria Köln 1904,#080808,#C82838,#707278,big,measured,horizontal
+71721,FC Würzburger Kickers,#E80808,#F8F8F8,#121214,small,measured,plain
+71722,Fortuna Düsseldorf 1895,#782838,#F8F8F8,#707278,mid,measured,plain
+71723,MSV Duisburg,#F8F8F8,#0858B8,#707278,big,measured,horizontal
+71724,Rot-Weiss Essen,#F8F8F8,#C81828,#707278,small,measured,halves
+71725,SC Fortuna Köln,#F8F8F8,#E80808,#121214,mid,measured,plain
+71726,SC Preußen Münster,#085848,#18A868,#707278,big,measured,vertical
+71727,SG Sonnenhof Großaspach,#C80828,#F8F8F8,#707278,small,measured,plain
+71728,Sportclub Verl,#F8F8F8,#101012,#707278,mid,measured,plain
+71729,SSV Jahn Regensburg,#F8F8F8,#B80808,#707278,big,measured,plain
+71730,SV Meppen,#3868D8,#F8F8F8,#707278,big,measured,plain
+71731,SV Waldhof Mannheim 07,#186898,#383838,#707278,small,measured,vertical
+71732,SV Wehen Wiesbaden,#080808,#E82838,#707278,mid,measured,plain
+71733,TSG Hoffenheim II,#283848,#2868A8,#707278,big,measured,plain
+71734,TSV Alemannia Aachen,#F8F838,#080808,#707278,small,measured,plain
+71735,TSV Havelse 1912,#C80828,#F8F8F8,#707278,mid,measured,halves
+71736,VfB Stuttgart II,#F8F8F8,#E80808,#121214,big,measured,horizontal
+71737,Atalanta Under 23,#181818,#2868B8,#707278,small,measured,vertical
+71738,Campobasso Football Club,#182858,#E80808,#707278,mid,measured,plain
+71739,Forlì,#C81828,#F8F8F8,#707278,big,measured,halves
+71740,Grosseto 1912,#C80828,#F8F8F8,#707278,big,measured,plain
+71741,Gubbio,#E82838,#282858,#707278,small,measured,halves
+71742,Guidonia Montecelio,#083868,#D82828,#707278,mid,measured,plain
+71743,Latina Calcio 1932,#2878B8,#080808,#707278,big,measured,plain
+71744,Livorno 1915,#782828,#080808,#F2F2F4,small,measured,plain
+71745,Ostiamare Lido Calcio,#6818A8,#F8F8F8,#707278,mid,measured,plain
+71746,Perugia,#E80808,#F8F8F8,#121214,big,measured,plain
+71747,Pianese,#182828,#F5F5F5,#707278,small,measured,plain
+71748,Pineto Calcio,#2878D8,#F8F8F8,#121214,mid,measured,plain
+71749,Ravenna,#981808,#F8C838,#707278,big,measured,plain
+71750,Sambenedettese,#C81818,#282848,#707278,big,measured,plain
+71751,Torres,#E80808,#082848,#707278,small,measured,plain
+71752,Vado,#083868,#E83838,#707278,mid,measured,plain
+71753,Vis Pesaro 1898,#F8F8F8,#E82838,#121214,big,measured,halves
+71754,CD Atlas,#C81828,#080808,#707278,small,measured,plain
+71755,CD Guadalajara,#D80808,#F8F8F8,#183848,mid,measured,halves
+71756,CD Necaxa,#F8F8F8,#088838,#707278,big,measured,plain
+71757,CD Santos Laguna,#28A868,#F8F8F8,#121214,small,measured,horizontal
+71758,CF Atlante,#082868,#782828,#F2F2F4,mid,measured,plain
+71759,CF Puebla de la Franja,#F8F8F8,#2878F8,#121214,big,measured,plain
+71760,Club Atlético San Luis,#C80828,#F8F8F8,#084888,big,measured,halves
+71761,Club León,#0F6F3F,#F8F8F8,#707278,small,measured,plain
+71762,Deportivo Toluca,#E80808,#080808,#707278,mid,measured,plain
+71763,Fútbol Club Juárez,#88E838,#080808,#707278,big,measured,plain
+71764,Pachuca CF,#0838A8,#F8F8F8,#707278,small,measured,halves
+71765,Pumas de la UNAM,#F8F8F8,#082868,#707278,mid,measured,plain
+71766,Querétaro FC,#085888,#080808,#F2F2F4,big,measured,plain
+71767,Tijuana,#C81828,#080808,#707278,small,measured,horizontal
+71768,Almere City FC,#E82828,#080808,#707278,mid,measured,plain
+71769,De Graafschap,#F8F8F8,#0858D8,#707278,big,measured,horizontal
+71770,FC Den Bosch,#0858C8,#F8F8F8,#707278,big,measured,plain
+71771,FC Dordrecht,#F8F8F8,#185848,#707278,small,measured,plain
+71772,FC Eindhoven,#F8F8F8,#0858D8,#707278,mid,measured,halves
+71773,FC Emmen,#D82828,#F8F8F8,#121214,big,measured,halves
+71774,Helmond Sport,#E81818,#080808,#707278,small,measured,plain
+71775,MVV Maastricht,#A80818,#F8F8F8,#707278,mid,measured,vertical
+71776,RKC Waalwijk,#F8E828,#3878B8,#121214,big,measured,vertical
+71777,Roda JC Kerkrade,#F8D808,#080808,#707278,small,measured,plain
+71778,TOP Oss,#D81828,#F8F8F8,#121214,mid,measured,halves
+71779,Vitesse Arnhem,#080808,#F8D828,#707278,big,measured,halves
+71780,VVV-Venlo,#F8F808,#080808,#707278,big,measured,plain
+71781,Arbroath,#782828,#F8F8F8,#707278,small,measured,plain
+71782,Ayr United,#F8F8F8,#101012,#707278,mid,measured,halves
+71783,Dunfermline Athletic,#F8F8F8,#101012,#707278,big,measured,plain
+71784,Greenock Morton,#0868C8,#F8F8F8,#707278,small,measured,horizontal
+71785,Inverness CT,#3858A8,#D82838,#707278,mid,measured,plain
+71786,Partick Thistle,#F8D808,#E80808,#121214,big,measured,halves
+71787,Queen's Park,#F8F8F8,#101012,#707278,small,measured,horizontal
+71788,Raith Rovers,#181838,#F8F8F8,#707278,mid,measured,plain
+71789,Stenhousemuir,#680818,#F8F8F8,#707278,big,measured,plain
+71790,Alcorcón,#D8B828,#183888,#707278,big,measured,vertical
+71791,Algeciras,#F8F8F8,#E80808,#121214,small,measured,plain
+71792,Antequera C.F,#F8F8F8,#48C878,#121214,mid,measured,vertical
+71793,C.E. Europa,#F8F8F8,#0838A8,#707278,big,measured,plain
+71794,Cartagena,#F8F8F8,#101012,#707278,small,measured,halves
+71795,H. Alicante,#0858D8,#F8F8F8,#707278,mid,measured,plain
+71796,Ibiza,#38B8F8,#F8F8F8,#121214,big,measured,plain
+71797,Murcia,#C81818,#F8F8F8,#707278,small,measured,vertical
+71798,R. Jaén,#F8F8F8,#583898,#707278,mid,measured,plain
+71799,R. Majadahonda,#F8F8F8,#082868,#707278,big,measured,plain
+71800,Tarragona,#B80808,#F8F8F8,#707278,big,measured,plain
+71801,Teruel,#E80808,#980808,#707278,small,measured,plain
+71802,Torremolinos,#F8F8F8,#088838,#707278,mid,measured,plain
+71803,U.E. Sant Andreu,#F8F838,#E80808,#121214,big,measured,halves
+71805,Águilas F.C,#F8F8F8,#0858D8,#6878F8,mid,measured,halves
+71806,Etoile Carouge FC,#084868,#F8F8F8,#707278,big,measured,plain
+71807,FC Aarau,#F8F8F8,#101012,#707278,small,measured,plain
+71808,FC Rapperswil-Jona,#C80828,#F8F8F8,#707278,mid,measured,plain
+71809,FC Stade Lausanne-Ouchy,#B80808,#F8F8F8,#707278,big,measured,plain
+71810,FC Stade Nyonnais,#F8D808,#080808,#707278,big,measured,plain
+71811,FC Wil 1900,#F8F8F8,#101012,#707278,small,measured,plain
+71812,FC Winterthur,#D80818,#F8F8F8,#121214,mid,measured,vertical
+71813,Neuchâtel Xamax FCS,#080808,#D81828,#707278,big,measured,plain
+71814,SC Kriens,#F8F8F8,#086838,#707278,small,measured,plain
+71815,Yverdon Sport FC,#084838,#F8F8F8,#707278,mid,measured,plain
+71816,Ankara Keçiörengücü,#F8F8F8,#480888,#707278,big,measured,plain
+71817,Bandırma Spor,#F8F8F8,#881828,#707278,small,measured,halves
+71818,Batman Petrol Spor A.Ş,#F8F8F8,#C81818,#707278,mid,measured,plain
+71819,Bodrum Futbol Kulübü,#088838,#084828,#707278,big,measured,plain
+71820,Boluspor,#F8F8F8,#E81828,#121214,big,measured,halves
+71821,Bursaspor,#F8F8F8,#086838,#707278,small,measured,halves
+71822,Esenler Erokspor,#284838,#F8F8F8,#707278,mid,measured,plain
+71823,Iğdır Futbol Kulübü,#F8F8F8,#088838,#707278,big,measured,plain
+71824,İstanbulspor A.Ş,#F8E818,#080808,#707278,small,measured,halves
+71825,Manisa Futbol Kulübü,#F8F8F8,#101012,#707278,mid,measured,halves
+71826,Mardin 1969 Spor,#E80808,#181838,#707278,big,measured,plain
+71827,Muğlaspor Kulübü,#F8F8F8,#087838,#707278,small,measured,plain
+71828,Pendikspor Futbol A.Ş,#F8F8F8,#E80808,#121214,mid,measured,halves
+71829,Sarıyer,#F8F8F8,#0838C8,#707278,big,measured,halves
+71830,Sivasspor,#F8F8F8,#B80818,#707278,big,measured,halves
+71831,Van Spor Futbol Kulübü,#D80808,#080808,#707278,small,measured,vertical
+71832,Ümraniyespor,#C80828,#F8F8F8,#707278,mid,measured,plain
+71833,Birmingham Legion FC,#080808,#988858,#707278,big,measured,halves
+71834,Brooklyn FC,#080808,#F5F5F5,#707278,small,measured,plain
+71835,Charleston Battery,#080808,#F8C808,#707278,mid,measured,plain
+71836,Detroit City FC,#481818,#F8F8F8,#C89828,big,measured,halves
+71837,Hartford Athletic,#089848,#F8F8F8,#121214,small,measured,plain
+71838,Indy Eleven,#182838,#F8F8F8,#707278,mid,measured,plain
+71839,Loudoun United FC,#E82828,#F8F8F8,#121214,big,measured,plain
+71840,Louisville City FC,#480878,#080808,#F2F2F4,big,measured,plain
+71841,Miami FC,#083898,#E8C868,#707278,small,measured,plain
+71842,Pittsburgh Riverhounds,#080808,#F8E808,#707278,mid,measured,horizontal
+71843,Rhode Island FC,#081838,#F8A808,#707278,big,measured,plain
+71844,Sporting JAX,#08A8F8,#F8A808,#121214,small,measured,plain
+71845,Tampa Bay Rowdies,#488828,#F8C808,#121214,mid,measured,vertical

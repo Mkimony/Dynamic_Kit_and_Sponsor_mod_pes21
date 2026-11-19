@@ -6,25 +6,32 @@ Pipeline
     club + season + slot  ->  kit_render.render_kit_set   (2048x2048 atlas PNGs)
                           ->  ftex_io.image_to_ftex        (BC3/DXT5, 12 mips)
                           ->  u<team>p<slot>.ftex
-                          ->  (optional) livecpk\KitGenerator override
+                          ->  (optional) content\kits\_KitGenerator\ store
 
 The .ftex header (version / texture_type / hashes / size / format) is inherited
 from a real PES kit ("base"), so the output is byte-for-byte the same *kind* of
 file the game already loads.  Any real kit works as the base: the three Chelsea
 slots share an identical 64-byte header.
 
+Where the kits are installed
+----------------------------
+NOT under the original file names in livecpk (that would override the kit in
+every game mode).  They go to a private store,
+
+    <sider>\content\kits\_KitGenerator\u<team>p<slot>.ftex
+
+and KitGenerator.lua hands Sider that path through the ``livecpk_make_key`` /
+``livecpk_get_filepath`` hooks, but ONLY while a career (Master League) is
+loaded.  In exhibition and every other mode the game's own kits load untouched.
+
 Usage
 -----
     python build_kit.py <club_id> <season> <outdir> [--slots 1,2,3] [--install]
-    python build_kit.py <club_id> <season> <outdir> --install --game-root "C:\\...\\SP Football Life 2027"
+    python build_kit.py <club_id> <season> <outdir> --install --sider "C:\\...\\SiderAddons"
 
 Notes
 -----
-* Installing writes to
-      <game>\\SiderAddons\\livecpk\\KitGenerator\\Asset\\model\\character\\uniform\\texture\\#windx11\\
-  which must be listed BEFORE livecpk\\SoundtrackServer in sider.ini (Sider stops
-  at the first cpk.root that has the file).  See livecpk\\KitGenerator\\_README.txt.
-* Nothing is overwritten without a timestamped .bak next to it.
+* Installing backs up any file it replaces with a timestamped .bak next to it.
 """
 import argparse
 import shutil
@@ -47,8 +54,7 @@ DEFAULT_BASE = Path(
     r"C:\Program Files (x86)\SP Football Life 2027\SiderAddons\content\kits"
     r"\TheGaffer_Chelsea_FC\p1\u0102p1.ftex")
 
-INSTALL_SUBDIR = Path("SiderAddons/livecpk/KitGenerator/Asset/model/character/"
-                      "uniform/texture/#windx11")
+INSTALL_SUBDIR = Path("content/kits/_KitGenerator")
 
 
 def _load_club(club_id, sider=None):
@@ -73,7 +79,7 @@ def pack_atlas(atlas_png, out_ftex, template):
 
 def build_set(club, season, outdir, base_ftex=DEFAULT_BASE, slots=(1, 2, 3),
               install=False, game_root=DEFAULT_GAME_ROOT, quiet=False, sponsor=None,
-              logo_dir=None):
+              logo_dir=None, sider=None):
     """Render + pack a club's kit set.  Returns [(slot, atlas, ftex, design)].
 
     When `sponsor` is given (a brand name from content/KitGenerator/logos), the
@@ -83,9 +89,17 @@ def build_set(club, season, outdir, base_ftex=DEFAULT_BASE, slots=(1, 2, 3),
     `logo_dir` overrides where the sponsor logos live (defaults to this mod's
     own content/KitGenerator/logos).  A deployed watcher points it at the game's
     SiderAddons/content/KitGenerator/logos instead.
+
+    `sider` is the game's SiderAddons folder: it is where the club badge and the
+    kit-supplier mark are sourced from, and (with `install`) where the generated
+    .ftex set is written.
     """
     outdir = Path(outdir)
     outdir.mkdir(parents=True, exist_ok=True)
+
+    if sider is None:
+        sider = Path(game_root) / "SiderAddons"
+    sider = Path(sider)
 
     base_ftex = Path(base_ftex)
     if not base_ftex.is_file():
@@ -98,8 +112,8 @@ def build_set(club, season, outdir, base_ftex=DEFAULT_BASE, slots=(1, 2, 3),
     masks = kit_regions_build()
 
     rendered = kit_render.render_kit_set(club, season, outdir, logo_dir,
-                                         masks=masks, sponsor=sponsor)
-    install_dir = Path(game_root) / INSTALL_SUBDIR if install else None
+                                         masks=masks, sponsor=sponsor, sider=sider)
+    install_dir = (sider / INSTALL_SUBDIR) if install else None
     if install_dir:
         install_dir.mkdir(parents=True, exist_ok=True)
 
@@ -151,7 +165,8 @@ def main(argv=None):
     p.add_argument("--slots", default="1,2,3",
                    help="which kits to build, e.g. 1 or 1,2,3 (default 1,2,3)")
     p.add_argument("--install", action="store_true",
-                   help="copy the .ftex files into the livecpk override folder")
+                   help="copy the .ftex files into the game's "
+                        "content\\kits\\_KitGenerator store (served only in ML)")
     p.add_argument("--base", default=str(DEFAULT_BASE),
                    help="a real .ftex used as the header template")
     p.add_argument("--game-root", default=str(DEFAULT_GAME_ROOT),
@@ -174,7 +189,7 @@ def main(argv=None):
                         base_ftex=args.base, slots=_parse_slots(args.slots),
                         install=args.install, game_root=args.game_root,
                         quiet=args.quiet, sponsor=args.sponsor,
-                        logo_dir=args.logos)
+                        logo_dir=args.logos, sider=sider)
 
     print()
     for slot, atlas, ftex, d in results:

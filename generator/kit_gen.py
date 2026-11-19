@@ -149,7 +149,7 @@ def preview(club, season, logo_dir, brand_files):
     return canvas, design, brand
 
 def load_clubs(path):
-    with open(path, newline='') as f:
+    with open(path, newline='', encoding='utf-8-sig') as f:
         return [dict(r, id=int(r['team_id'])) for r in csv.DictReader(f)]
 
 if __name__ == '__main__':

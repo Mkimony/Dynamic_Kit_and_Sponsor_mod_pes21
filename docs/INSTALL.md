@@ -21,7 +21,9 @@ From this repository copy:
 |-----------------|-----------------------------------|
 | `modules/`      | `SiderAddons/modules/`            |
 | `content/`      | `SiderAddons/content/`            |
-| `livecpk/`      | `SiderAddons/livecpk/`            |
+
+(The generated kits are written to `SiderAddons/content/kits/_KitGenerator/` at run time, so
+there is no `livecpk/` folder to copy any more.)
 
 ## 3. Deploy the watcher (one-time)
 
@@ -33,9 +35,10 @@ python generator/setup_watcher.py
 ```
 
 This copies the generator into the game (`SiderAddons/KitGenerator/generator`), writes
-`SiderAddons/content/KitGenerator/watcher.cmd`, and generates `brands.txt` (the brand pool)
-from the shipped logos. It uses `pythonw`, so no console window appears. Only **one**
-watcher runs at a time (it holds a loopback port).
+`SiderAddons/content/KitGenerator/watcher.cmd`, generates `brands.txt` (the brand pool)
+from the shipped logos, adds `cpk.root = ".\content\kits"` to `sider.ini` and removes any
+old static kit override from `livecpk\KitGenerator`. It uses `pythonw`, so no console window
+appears. Only **one** watcher runs at a time (it holds a loopback port).
 
 To try the watcher without the game:
 
@@ -58,14 +61,17 @@ lua.module = "KitGenerator.lua"
 The **Sider Mod Menu**, if you use it, must be the **first** `lua.module`. Only add
 `overlay.*` lines if you use the classic text overlay instead of the Mod Menu.
 
-The `livecpk` order matters — the mod's root must be listed **before** any other root that
-also ships a kit for the same team:
+The generated kits are served through a private store, so the `cpk.root` list just needs the
+store's parent registered (setup_watcher.py does this for you):
 
 ```ini
-cpk.root = ".\livecpk\KitGenerator"
+cpk.root = ".\content\kits"
 cpk.root = ".\livecpk\SoundtrackServer"
 ...
 ```
+
+`KitGenerator.lua` remaps the kit path to `_KitGenerator\u<team>p<slot>.ftex` **only while a
+Master League career is loaded**, so every other mode keeps the game's own kits.
 
 ## 5. First run
 
@@ -89,8 +95,8 @@ If something looks wrong, install the read-only probe on its own to collect diag
 ## Uninstall
 
 Delete the `lua.module` lines you added and the copied `modules/`, `content/KitGenerator/`,
-`livecpk/KitGenerator/` and `SiderAddons/KitGenerator/` folders. Nothing outside those paths
-is touched.
+`content/kits/_KitGenerator/` and `SiderAddons/KitGenerator/` folders, and remove the
+`cpk.root = ".\content\kits"` line from `sider.ini`. Nothing outside those paths is touched.
 
 ## Troubleshooting
 
